@@ -11,7 +11,6 @@ mkdir -p "$XDG_CONFIG_HOME"/alacritty
 mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
 mkdir -p "$XDG_CONFIG_HOME"/skhd
 mkdir -p "$XDG_CONFIG_HOME"/k9s
-# mkdir -p "$XDG_CONFIG_HOME"/wezterm
 
 git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
 
@@ -47,21 +46,21 @@ ln -sf "$PWD/newsboat/urls" "$HOME"/.newsboat/urls
 # Packages
 
 # install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # get the font out of the way first, it's the most annoying
 #
 # install for Mac using brew. For ubuntu:
 
 # mkdir -p $HOME/.local/share/fonts
-# cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
+cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 
 # brew packages Mac
 # amethyst fzf nvim exa hugo bash-completion@2 newsboat kubectl starship
 # brew install --cask alacritty
 
 # ubuntu packages apt
-sudo apt install ripgrep gh
+sudo apt install ripgrep gh alacritty
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
@@ -70,9 +69,9 @@ sudo apt install gcc g++ unzip
 sudo apt install fd fzf kubectl kubectx derailed/k9s/k9s starship
 
 # ubuntu brew for neovim setup
-brew install neovim go lazygit
+sudo apt install neovim go lazygit
 
 # ubuntu specific notes
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.
-# sudo ln -sf /usr/bin/vim /usr/bin/nvim
+sudo ln -sf /usr/bin/vim /usr/bin/nvim
